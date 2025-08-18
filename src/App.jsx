@@ -1,35 +1,37 @@
 import "./App.css";
 import { usePrivy } from "@privy-io/react-auth";
 
-function App() {
-  const { ready, authenticated, user, login, logout } = usePrivy();
+import LoginButton from "./components/LoginButton";
+import LogoutButton from "./components/LogoutButton";
+import Home from "./pages/Home";
+import Gameplay from "./pages/Gameplay";
 
-  // Wait until the Privy client is ready before taking any actions
-  if (!ready) {
-    return null;
-  }
+function App() {
+  const { ready, authenticated, user } = usePrivy();
+
+  if (!ready) return null;
 
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* If the user is not authenticated, show a login button */}
-        {/* If the user is authenticated, show the user object and a logout button */}
-        {ready && authenticated ? (
-          <div>
-            <textarea
-              readOnly
-              value={JSON.stringify(user, null, 2)}
-              style={{ width: "600px", height: "250px", borderRadius: "6px" }}
-            />
-            <br />
-            <button onClick={logout} style={{ marginTop: "20px", padding: "12px", backgroundColor: "#069478", color: "#FFF", border: "none", borderRadius: "6px" }}>
-              Log Out
-            </button>
-          </div>
-        ) : (
-          <button onClick={login} style={{padding: "12px", backgroundColor: "#069478", color: "#FFF", border: "none", borderRadius: "6px" }}>Log In</button>
-        )}
-      </header>
+    <div className="App" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      {/* top-right login/logout */}
+     <header
+  style={{
+    width: "calc(100% - 2rem)", // typo fixed: was "cal"
+    position: "fixed",
+    top: 0,
+    display: "flex",
+    justifyContent: "flex-end",
+    padding: "1rem",
+  }}
+>
+  {authenticated ? <LogoutButton /> : <LoginButton />}
+</header>
+
+
+      {/* main content */}
+      <main style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
+        {authenticated ? <Gameplay user={user} /> : <Home />}
+      </main>
     </div>
   );
 }
