@@ -64,7 +64,7 @@ export default function Home() {
               margin: "8px",
             }}
           >
-            Learn more
+            More
           </button>
         </div>
       </FadeInSection>
@@ -110,7 +110,7 @@ export default function Home() {
               margin: "8px",
             }}
           >
-            View Pricing
+            Pricing
           </button>
         </div>
       </FadeInSection>
