@@ -55,7 +55,7 @@ export default function Home() {
           <button
             onClick={handleScroll}
             style={{
-              fontSize: "2.5rem",
+              fontSize: "1.5rem",
               padding: "12px 40px",
               backgroundColor: "#000",
               color: "#fff",
@@ -87,7 +87,7 @@ export default function Home() {
         <ul className="feature-list">
           <li>Priority placement in matches</li>
           <li>Weekly lead-gen reports</li>
-          <li>Analytics & engagement insights</li>
+          <li>Analytics &engagement insights</li>
           <li>Concierge DM intros</li>
         </ul>
       </FadeInSection>
@@ -101,7 +101,7 @@ export default function Home() {
           <button
             onClick={handleScroll}/*Go to support page*/
             style={{
-              fontSize: "2.5rem",
+              fontSize: "1.5rem",
               padding: "12px 40px",
               backgroundColor: "#000",
               color: "#fff",

@@ -31,8 +31,7 @@ export default function TopBar() {
           alignItems: "center",
         }}
       >
-        <Link to="/about" style={linkStyle}>About</Link>
-        <Link to="/dashboard" style={linkStyle}>Dashboard</Link>
+       <Link to="/dashboard" style={linkStyle}>Dashboard</Link>
         <Link to="/support" style={linkStyle}>Support</Link>
         </div>
 

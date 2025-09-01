@@ -32,8 +32,7 @@ function App() {
       <main style={{ flex: 1}}>
         <Routes>
           <Route path="/" element={authenticated ? <Dashboard user={user}/> : <Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/support" element={<Support />} />
         </Routes>
       </main>

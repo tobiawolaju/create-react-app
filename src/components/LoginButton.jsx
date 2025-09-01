@@ -8,7 +8,7 @@ export default function LoginButton() {
      
       onClick={login}
       style={{
-        fontSize:"2.5rem",
+        fontSize:"1.5rem",
         padding: "12px 40px",
         backgroundColor: "#ffffffff",
         color: "#000000ff",
