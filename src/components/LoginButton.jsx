@@ -4,16 +4,18 @@ export default function LoginButton() {
   const { login } = usePrivy();
 
   return (
-    <button
+     <button  
+     
       onClick={login}
       style={{
-        padding: "12px",
-        backgroundColor: "#069478",
-        color: "#fff",
+        fontSize:"2.5rem",
+        padding: "12px 40px",
+        backgroundColor: "#ffffffff",
+        color: "#000000ff",
         border: "none",
-        borderRadius: "6px",
-      }}
-    >
+        borderRadius: "100px",
+        margin:"8px",
+      }}>
       Log In
     </button>
   );

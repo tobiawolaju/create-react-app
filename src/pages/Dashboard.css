@@ -1,0 +1,223 @@
+.dashboard {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+  margin-top: 60px;
+}
+
+
+.user-info  {
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 2rem;
+}
+
+.dashboard .user-info h3{
+    padding: 0;
+    margin: 2px;
+}
+
+.dashboard .user-info p {
+    padding: 0;
+    margin: 2px;
+    opacity: 0.5;
+}
+
+
+.profile-picture {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 0rem;
+}
+
+.chart-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* card base */
+.dash-card {
+    margin-bottom: 20px;
+  background: #111;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* analytics */
+.chart-container {
+  height: 300px;
+  padding: 20px;
+  padding-left: 0px;
+}
+
+.analytics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.analytics-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.range-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.range-selector button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.range-selector button:hover,
+.range-selector button.active {
+  background: #3a7cff;
+  border-color: #3a7cff;
+}
+
+/* preferences */
+.prefs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+/* switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  border-radius: 26px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: linear-gradient(90deg, #3a7cff, #d900ff);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+
+.metric-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.metric-controls h4 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.secondary-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.secondary-select select {
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+}
+
+
+
+.metric-selectors {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.metric-select {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  padding: 0px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.metric-select select {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.35rem 0.5rem;
+  margin-top: 0.35rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.metric-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.color-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}

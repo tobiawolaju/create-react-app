@@ -1,0 +1,88 @@
+/* global reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000; /* fallback color behind sections */
+  height: 100%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* landing container: scroll snap enabled */
+.landing {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* each section fills screen */
+.fade-section {
+  min-height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  scroll-snap-align: start;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* when visible (triggered by IntersectionObserver) */
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.big-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.feature-list {
+  font-size: 1.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  margin-bottom: 1rem;
+}
+
+/* custom scrollbars */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ad67d6;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ad67d6 #111;
+}
