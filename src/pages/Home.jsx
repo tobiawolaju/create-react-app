@@ -42,32 +42,35 @@ export default function Home() {
   return (
     <div className="landing">
       {/* hero */}
-      <FadeInSection bgColor="#ad67d6">
-        <h1 className="big-title">Reach your X creator's goals with AI edges</h1>
-        <p className="subtitle">
-          Curated ecosystems of Premium users.  
-          Boost visibility. Generate real leads.  
-          All inside X.
-        </p>
+    <FadeInSection bgColor="#ad67d6">
+<h1 className="big-title">
+  InfluencerLab
+</h1>
+<p className="subtitle">
+  14 days → from nobody to X-influencer.  
+  $2 unlocks networks, reach, followers. all inside X.
+</p>
 
-        <div>
-          {authenticated ? <LogoutButton /> : <LoginButton />}
-          <button
-            onClick={handleScroll}
-            style={{
-              fontSize: "1.5rem",
-              padding: "12px 40px",
-              backgroundColor: "#000",
-              color: "#fff",
-              border: "none",
-              borderRadius: "100px",
-              margin: "8px",
-            }}
-          >
-            More
-          </button>
-        </div>
-      </FadeInSection>
+
+
+  <div>
+    {authenticated ? <LogoutButton /> : <LoginButton />}
+    <button
+      onClick={handleScroll}
+      style={{
+        fontSize: "1.5rem",
+        padding: "12px 20px",
+        backgroundColor: "#000",
+        color: "#fff",
+        border: "none",
+        borderRadius: "100px",
+        margin: "8px",
+      }}
+    >
+      see how
+    </button>
+  </div>
+</FadeInSection>
 
       {/* 2nd section w/ ref target */}
       <FadeInSection bgColor="#ffcc00">

@@ -9,7 +9,7 @@ export default function LoginButton() {
       onClick={login}
       style={{
         fontSize:"1.5rem",
-        padding: "12px 40px",
+        padding: "12px 20px",
         backgroundColor: "#ffffffff",
         color: "#000000ff",
         border: "none",

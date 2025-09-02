@@ -38,7 +38,8 @@ html, body {
 }
 
 .big-title {
-  font-size: 3.5rem;
+  color:rgb(32, 27, 27);
+  font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 2rem;
   text-align: center;
