@@ -5,19 +5,17 @@ export default function LogoutButton() {
 
   return (
     <button
-      data-testid="logout-button"
       onClick={logout}
-     style={{
-        fontSize:"1rem",
-        padding: "12px 40px",
-        backgroundColor: "#ffffffff",
-        color: "#000000ff",
+      style={{
+        fontSize: "0.8rem",
+        padding: "4px 10px",
+        background: "transparent",
+        color: "rgba(255,255,255,0.4)",
         border: "none",
-        borderRadius: "100px",
-        margin:"8px",
-      }}>
-
-      Logout
+        cursor: "pointer",
+      }}
+    >
+      logout
     </button>
   );
 }
