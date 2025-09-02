@@ -1,18 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashbaord";
-import About from "./pages/Dashbaord";
 import Support from "./pages/Dashbaord";
 import TopBar from "./components/TopBar";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import { useEffect } from "react";
 import { usePrivy } from "@privy-io/react-auth";
 
-
 function App() {
-  const { ready, authenticated, user, logout } = usePrivy();
-
-  
+  const { ready, authenticated, logout } = usePrivy();
 
   useEffect(() => {
     function handleMessage(e) {
@@ -27,16 +24,37 @@ function App() {
   if (!ready) return null;
 
   return (
-    <div className="App" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-      <TopBar />
-      <main style={{ flex: 1}}>
+    <div
+      className="App"
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
+      {authenticated && <TopBar />}
+      <main style={{ flex: 1 }}>
         <Routes>
-          <Route path="/" element={authenticated ? <Dashboard user={user}/> : <Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/support" element={<Support />} />
+          <Route
+            path="/"
+            element={authenticated ? <Dashboard /> : <Home />}
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/support"
+            element={
+              <ProtectedRoute>
+                <Support />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
     </div>
   );
 }
+
 export default App;

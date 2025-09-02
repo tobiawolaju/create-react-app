@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
-import { usePrivy } from "@privy-io/react-auth";
-import LoginButton from "./LoginButton2";
-import LogoutButton from "./LogoutButton";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function TopBar() {
-  const { authenticated } = usePrivy();
+  const location = useLocation();
 
   return (
     <nav
@@ -16,11 +13,11 @@ export default function TopBar() {
         height: "64px",
         display: "flex",
         alignItems: "center",
-        justifyContent:"center",
-        padding: "0 1.5rem",
-        backdropFilter: "blur(12px)",
+        justifyContent: "center",
+        padding: "0rem",
+        backdropFilter: "blur(8px)",
         background:
-          "linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(255,255,255,0.15))",
+          "linear-gradient(to bottom, #2b2937, #2b293714)",
         zIndex: 1000,
       }}
     >
@@ -31,20 +28,31 @@ export default function TopBar() {
           alignItems: "center",
         }}
       >
-       <Link to="/dashboard" style={linkStyle}>Dashboard</Link>
-        <Link to="/support" style={linkStyle}>Support</Link>
-        </div>
-
-      <div>
-        {authenticated ? <LogoutButton /> : <LoginButton />}
+        <NavLink
+          to="/dashboard"
+          style={({ isActive }) =>
+            navLinkStyle({
+              isActive:
+                isActive || location.pathname === "/", // treat "/" as dashboard
+            })
+          }
+        >
+          Dashboard
+        </NavLink>
+        <NavLink to="/lists" style={navLinkStyle}>
+          Lists
+        </NavLink>
+        <NavLink to="/support" style={navLinkStyle}>
+          Support
+        </NavLink>
       </div>
     </nav>
   );
 }
 
-const linkStyle = {
-  textDecoration: "none",
-  color: "#fff", // solid white
+const navLinkStyle = ({ isActive }) => ({
+  textDecoration: isActive ? "underline" : "none",
+  color: isActive ? "#fff" : "#ffffff6e",
   fontSize: "1rem",
-  fontWeight: 500,
-};
+  fontWeight: isActive ? 700 : 500,
+});
