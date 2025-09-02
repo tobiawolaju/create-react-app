@@ -16,7 +16,7 @@ export default function LoginButton() {
         borderRadius: "100px",
         margin:"8px",
       }}>
-      Log In
+      Get started
     </button>
   );
 }

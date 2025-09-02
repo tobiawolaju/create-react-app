@@ -24,7 +24,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   scroll-snap-align: start;
   opacity: 0;
   transform: translateY(40px);
@@ -41,8 +41,24 @@ html, body {
   color:rgb(32, 27, 27);
   font-size: 3.2rem;
   font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.big-title2 {
+  color:rgb(255, 255, 255);
+  font-size: 3.2rem;
+  font-weight: 800;
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.feature-list2 {
+  color: white;
+  font-size: 1.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .subtitle {
